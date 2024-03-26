@@ -1,5 +1,6 @@
 package fr.uga.l3miage.tp4.components;
 
+import fr.uga.l3miage.tp4.models.CandidateEntity;
 import fr.uga.l3miage.tp4.models.ExamEntity;
 import fr.uga.l3miage.tp4.models.TestCenterEntity;
 import fr.uga.l3miage.tp4.repositories.TestCenterRepository;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 import fr.uga.l3miage.tp4.enums.TestCenterCode;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Component
 @RequiredArgsConstructor
@@ -57,4 +59,11 @@ public class TestCenterComponent {
     }
 
 
+
+
+    // Récupérer la liste des candidats du TestCenter ayant le code 'GRE' (fonction nommée)
+    public Set<CandidateEntity> getCandidatesByTestCenterCodeGRE() {
+        TestCenterEntity testCenter = testCenterRepository.findByCode(TestCenterCode.GRE);
+        return testCenter.getCandidateEntities();
+    }
 }
