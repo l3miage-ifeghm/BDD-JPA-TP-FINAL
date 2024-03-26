@@ -4,7 +4,16 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+import fr.uga.l3miage.tp4.repositories.ExamRepository;
+import lombok.*;
+
+
 @Entity
+@Setter
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ExamEntity {
     @Id
     private Long id;
@@ -23,7 +32,6 @@ public class ExamEntity {
 
     @ManyToMany
     private Set<SkillEntity>skillEntities;
-
 
 
 }

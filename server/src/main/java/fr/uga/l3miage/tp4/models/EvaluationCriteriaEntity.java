@@ -1,10 +1,14 @@
 package fr.uga.l3miage.tp4.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
+import fr.uga.l3miage.tp4.repositories.EvaluationCriteriaRepository;
+import lombok.*;
+import javax.persistence.*;
 @Entity
+@Setter
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class EvaluationCriteriaEntity {
     @Id
     private Long id;
@@ -12,4 +16,9 @@ public class EvaluationCriteriaEntity {
     private String description;
 
     private boolean hasCandidatePerformedCriteria;
+
+
+
+
+
 }
